@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Glyphicon } from "react-bootstrap";
 import './App.css';
+import "bootstrap/dist/css/bootstrap.css";
+
+import "react-flexview/lib/flexView.css";
+import FlexView from "react-flexview";
 
 class App extends Component {
   render() {
     return (
-      <div className="info-wrapper">
+      <FlexView vAlignContent="center" hAlignContent="center" column className="info-wrapper">
           <h1 className="App-title">Kathryn Newbould</h1>
-          <h3>Software Engineer, Podcast Host, Woman in STEM</h3>
-      </div>
+          <h3>Software Engineer, Podcast Host</h3>
+          <Navigation/>
+      </FlexView>
     );
+  }
+}
+
+class Navigation extends Component {
+  render() {
+    return (<div>
+        <p>Hello</p>
+        </div>
+    )
   }
 }
 
