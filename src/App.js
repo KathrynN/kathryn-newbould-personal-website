@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Glyphicon } from "react-bootstrap";
+import { Button, ButtonToolbar, Glyphicon } from "react-bootstrap";
 import './App.css';
-import "bootstrap/dist/css/bootstrap.css";
-
-import "react-flexview/lib/flexView.css";
+import 'bootstrap/dist/css/bootstrap.css';
 import FlexView from "react-flexview";
+import 'react-flexview/lib/flexView.css';
 
 class App extends Component {
   render() {
@@ -20,9 +19,28 @@ class App extends Component {
 
 class Navigation extends Component {
   render() {
-    return (<div>
-        <p>Hello</p>
-        </div>
+    return (<ButtonToolbar>
+        <Button>
+          <Glyphicon
+            glyph="home"
+          />
+        </Button>
+        <Button>
+          <Glyphicon
+            glyph="envelope"
+          />
+        </Button>
+        <Button>
+          <Glyphicon
+            glyph="education"
+          />
+        </Button>
+        <Button>
+          <Glyphicon
+            glyph="music"
+          />
+        </Button>
+        </ButtonToolbar>
     )
   }
 }
