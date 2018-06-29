@@ -44,30 +44,29 @@ class Navigation extends Component {
     }
   }
 
+  getButton(description, glyphicon, linkhref, linktargetstyle) {
+    return (
+      <Button
+        onMouseOver={() => this.mousedOver(description)}
+        onMouseLeave={() => this.mouseLeft()}
+      >
+        <a href={linkhref} target={linktargetstyle}>
+        <Glyphicon
+          glyph={glyphicon}
+        />
+        </a>
+      </Button>
+    )
+  }
+
   render() {
+  //TODO add book glyphicon for portfolio page
     return (
       <FlexView column hAlignContent="center">
         <ButtonToolbar>
-          <Button
-            onMouseOver={() => this.mousedOver("email")}
-            onMouseLeave={() => this.mouseLeft()}
-          >
-            <a href="mailto:kathrynrnewbould@gmail.com">
-            <Glyphicon
-              glyph="envelope"
-            />
-            </a>
-          </Button>
-          <Button
-            onMouseOver={() => this.mousedOver("CV")}
-            onMouseLeave={() => this.mouseLeft()}
-          >
-            <a href="KathrynNewbould2018.pdf" target="_blank">
-              <Glyphicon
-                glyph="education"
-              />
-              </a>
-          </Button>
+          {this.getButton("email", "envelope", "mailto:kathrynrnewbould@gmail.com")}
+          {this.getButton("CV", "education", "KathrynNewbould2018.pdf", "_blank")}
+          {this.getButton("portfolio", "book")}
         </ButtonToolbar>
         <TextTip tooltip={this.state.target}/>
       </FlexView>
