@@ -4,6 +4,9 @@ html {
 
 body {
   height: 100%;
+  background-image: url("tough_mudder.jpg");
+  background-position: left;
+  background-size: cover;
   min-height: 100%;
 }
 
@@ -12,6 +15,7 @@ body {
 }
 
 .info-wrapper {
+  opacity: 0.8;
   background-color: #222;
   padding: 20px;
   height: 100%;
