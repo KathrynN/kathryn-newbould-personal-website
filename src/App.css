@@ -27,19 +27,18 @@ body {
 }
 
 .glyphicon {
-  color: #222;
+  color: red;
   font-size: 2em;
 }
 
-button {
-  margin: 50px;
+.btn {
+  background-color: #222;
 }
 
 .tips {
   width: 27%;
   font-size: 1.5em;
   text-align: center;
-  margin-top: 2rem;
   word-wrap: break-word;
   color: grey;
 }

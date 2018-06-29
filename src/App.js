@@ -20,18 +20,48 @@ class App extends Component {
 
 class Navigation extends Component {
 
+  constructor() {
+    super();
+    this.state = {
+      target: ""
+    }
+  }
+
+  mousedOver(target) {
+    if(target!==this.state.target){
+      this.setState({
+        target: target
+      })
+    }
+  }
+
+  mouseLeft() {
+    const target = "";
+    if(target!==this.state.target){
+      this.setState({
+        target: target
+      })
+    }
+  }
+
   render() {
     return (
       <FlexView column hAlignContent="center">
         <ButtonToolbar>
-          <Button>
+          <Button
+            onMouseOver={() => this.mousedOver("email")}
+            onMouseLeave={() => this.mouseLeft()}
+          >
             <a href="mailto:kathrynrnewbould@gmail.com">
             <Glyphicon
               glyph="envelope"
             />
             </a>
           </Button>
-          <Button>
+          <Button
+            onMouseOver={() => this.mousedOver("CV")}
+            onMouseLeave={() => this.mouseLeft()}
+          >
             <a href="KathrynNewbould2018.pdf" target="_blank">
               <Glyphicon
                 glyph="education"
@@ -39,7 +69,7 @@ class Navigation extends Component {
               </a>
           </Button>
         </ButtonToolbar>
-        <TextTip tooltip="HEY"/>
+        <TextTip tooltip={this.state.target}/>
       </FlexView>
     )
   }
