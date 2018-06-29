@@ -33,9 +33,11 @@ class Navigation extends Component {
           />
         </Button>
         <Button>
+          <a href="mailto:kathrynrnewbould@gmail.com">
           <Glyphicon
             glyph="envelope"
           />
+          </a>
         </Button>
         <Button>
           <a href="KathrynNewbould2018.pdf" target="_blank">
