@@ -10,8 +10,8 @@ class App extends Component {
   render() {
     return (
       <FlexView vAlignContent="center" hAlignContent="center" column className="info-wrapper">
-          <h1 className="App-title">Kathryn Newbould</h1>
-          <h3>Software Engineer, Podcast Host</h3>
+          <h1 className="title">Kathryn Newbould</h1>
+          <h3>Software Engineer</h3>
           <Navigation/>
       </FlexView>
     );
