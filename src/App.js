@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, ButtonToolbar, Glyphicon, Tooltip } from "react-bootstrap";
+import { Button, ButtonToolbar, Glyphicon } from "react-bootstrap";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import FlexView from "react-flexview";
@@ -20,10 +20,6 @@ class App extends Component {
 
 class Navigation extends Component {
 
-  getTooltip(string) {
-    return (<Tooltip id={string}>HI</Tooltip>)
-  }
-
   render() {
     return (
       <FlexView column hAlignContent="center">
@@ -43,19 +39,32 @@ class Navigation extends Component {
               </a>
           </Button>
         </ButtonToolbar>
-        <TextTip/>
+        <TextTip tooltip="HEY"/>
       </FlexView>
     )
   }
 }
 
 class TextTip extends Component {
+
+  getText() {
+    const binary = "01101000011010010111001001100101001000000110110101100101";
+    let display1 = binary;
+    let display2 = "";
+    let span = "";
+    if(this.props.tooltip) {
+      const props_length = this.props.tooltip.length;
+      const random_insertion_point = Math.random() * (binary.length-props_length);
+
+      display1 = binary.substring(0, random_insertion_point)
+      span = <span id="description">{this.props.tooltip}</span>
+      display2 = binary.substring(random_insertion_point + props_length);
+    }
+    return (<p className="tips">{display1}{span}{display2}</p>);
+  }
+
   render() {
-    return (
-      <p className="tips">
-        01101000011010010111001001100101001000000110110101100101
-      </p>
-    )
+    return this.getText();
   }
 }
 
