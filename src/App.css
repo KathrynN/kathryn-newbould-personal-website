@@ -34,3 +34,8 @@ body {
 button {
   margin: 50px;
 }
+
+tooltip {
+  background-color: red;
+  z-index: 1;
+}

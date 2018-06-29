@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Button, ButtonToolbar, Glyphicon } from "react-bootstrap";
+import { Button, ButtonToolbar, Glyphicon, Tooltip } from "react-bootstrap";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import FlexView from "react-flexview";
 import 'react-flexview/lib/flexView.css';
+
 
 class App extends Component {
   render() {
@@ -18,8 +19,14 @@ class App extends Component {
 }
 
 class Navigation extends Component {
+
+  getTooltip(string) {
+    return (<Tooltip id={string}>HI</Tooltip>)
+  }
+
   render() {
-    return (<ButtonToolbar>
+    return (
+      <ButtonToolbar>
         <Button>
           <Glyphicon
             glyph="home"
@@ -31,9 +38,11 @@ class Navigation extends Component {
           />
         </Button>
         <Button>
-          <Glyphicon
-            glyph="education"
-          />
+          <a href="KathrynNewbould2018.pdf" target="_blank">
+            <Glyphicon
+              glyph="education"
+            />
+            </a>
         </Button>
         <Button>
           <Glyphicon
