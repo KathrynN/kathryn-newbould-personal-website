@@ -26,32 +26,35 @@ class Navigation extends Component {
 
   render() {
     return (
-      <ButtonToolbar>
-        <Button>
-          <Glyphicon
-            glyph="home"
-          />
-        </Button>
-        <Button>
-          <a href="mailto:kathrynrnewbould@gmail.com">
-          <Glyphicon
-            glyph="envelope"
-          />
-          </a>
-        </Button>
-        <Button>
-          <a href="KathrynNewbould2018.pdf" target="_blank">
+      <FlexView column hAlignContent="center">
+        <ButtonToolbar>
+          <Button>
+            <a href="mailto:kathrynrnewbould@gmail.com">
             <Glyphicon
-              glyph="education"
+              glyph="envelope"
             />
             </a>
-        </Button>
-        <Button>
-          <Glyphicon
-            glyph="music"
-          />
-        </Button>
+          </Button>
+          <Button>
+            <a href="KathrynNewbould2018.pdf" target="_blank">
+              <Glyphicon
+                glyph="education"
+              />
+              </a>
+          </Button>
         </ButtonToolbar>
+        <TextTip/>
+      </FlexView>
+    )
+  }
+}
+
+class TextTip extends Component {
+  render() {
+    return (
+      <p className="tips">
+        01101000011010010111001001100101001000000110110101100101
+      </p>
     )
   }
 }
