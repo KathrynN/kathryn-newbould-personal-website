@@ -1,0 +1,16 @@
+
+.portfolio {
+  background-color: darkblue;
+  width: 40%;
+  text-align: center;
+}
+
+.portfolio h1 {
+  padding-top: 2rem;
+}
+
+.portfolio img {
+  width: 90%;
+  margin: 5%;
+  height: auto;
+}
