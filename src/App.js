@@ -10,12 +10,11 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      navigation: "home"
+      navigation: "portfolio"
     }
   }
 
   navigate_to(destination) {
-    console.log("destination is: ", destination);
     this.setState({
       navigation: destination
     })
@@ -25,17 +24,26 @@ class App extends Component {
     let body;
     if (this.state.navigation === "home") {
       body = (<div className="background tough_mudder">
-      <FlexView vAlignContent="center" hAlignContent="center" column className="info-wrapper">
+      <FlexView vAlignContent="center" hAlignContent="center" column className="full-screen info-wrapper">
           <h1 className="title">Kathryn Newbould</h1>
           <h3>Software Engineer</h3>
           <Navigation navigate_to={(x)=> {this.navigate_to(x)}}/>
       </FlexView>
       </div>)
-    } else {
+    } else if (this.state.navigation === "portfolio"){
       body = (
-        <Navigation navigate_to={(x)=> {
-          this.navigate_to(x)
-        }}/>
+        <div className="background" >
+          <FlexView hAlignContent="center" vAlignContent="bottom" className="info-wrapper header">
+            <FlexView column hAlignContent="right">
+              <h3>Software Engineer</h3>
+              <h1 className="title">Kathryn Newbould</h1>
+            </FlexView>
+          <Navigation navigate_to={(x)=>{this.navigate_to(x)}}/>
+        </FlexView>
+        <FlexView hAlignContent="center" column>
+
+        </FlexView>
+      </div>
       )
     }
     return (
