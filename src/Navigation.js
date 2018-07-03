@@ -48,11 +48,7 @@ export default class Navigation extends Component {
       <Button
         onMouseOver={() => this.mousedOver(description)}
         onMouseLeave={() => this.mouseLeft()}
-        onClick={() => {
-          console.log(description)
-          this.props.navigate_to(description)
-        }
-      }
+        onClick={() => this.props.navigate_to(description)}
       >
         <Glyphicon
           glyph={glyphicon}
