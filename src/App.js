@@ -23,7 +23,6 @@ class App extends Component {
   render() {
     let content;
     if (this.state.navigation === "home") {
-      content = (<p> home content </p>)
     } else if (this.state.navigation === "portfolio"){
       content = (<p> portfolio content </p>);
       //   <div className="background" >
@@ -42,12 +41,18 @@ class App extends Component {
     }
     return (
       <div className="background tough_mudder">
-      <FlexView vAlignContent="center" hAlignContent="center" column className="full-screen info-wrapper">
-          <h1 className="title">Kathryn Newbould</h1>
-          <h3>Software Engineer</h3>
-          <Navigation navigate_to={(x)=> {this.navigate_to(x)}}/>
-          {content}
-      </FlexView>
+        <div className="info-wrapper full-screen">
+          <FlexView> {content} </FlexView>
+          <FlexView vAlignContent="center"
+          hAlignContent="center"
+          column className="full-screen"
+          id="center_navigation">
+            <h1 className="title">Kathryn Newbould</h1>
+            <h3>Software Engineer</h3>
+            <Navigation navigate_to={(x)=> {this.navigate_to(x)}}/>
+            {content}
+          </FlexView>
+        </div>
       </div>
     );
   }
