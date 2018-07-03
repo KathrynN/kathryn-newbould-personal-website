@@ -7,13 +7,39 @@ import 'react-flexview/lib/flexView.css';
 
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      navigation: "home"
+    }
+  }
+
+  navigate_to(destination) {
+    console.log("destination is: ", destination);
+    this.setState({
+      navigation: destination
+    })
+  }
+
   render() {
-    return (
+    let body;
+    if (this.state.navigation === "home") {
+      body = (<div className="background tough_mudder">
       <FlexView vAlignContent="center" hAlignContent="center" column className="info-wrapper">
           <h1 className="title">Kathryn Newbould</h1>
           <h3>Software Engineer</h3>
-          <Navigation/>
+          <Navigation navigate_to={(x)=> {this.navigate_to(x)}}/>
       </FlexView>
+      </div>)
+    } else {
+      body = (
+        <Navigation navigate_to={(x)=> {
+          this.navigate_to(x)
+        }}/>
+      )
+    }
+    return (
+      body
     );
   }
 }
@@ -58,15 +84,32 @@ class Navigation extends Component {
       </Button>
     )
   }
+  getNavigationButton(description, glyphicon) {
+    return (
+      <Button
+        onMouseOver={() => this.mousedOver(description)}
+        onMouseLeave={() => this.mouseLeft()}
+        onClick={() => {
+          console.log(description)
+          this.props.navigate_to(description)
+        }
+      }
+      >
+        <Glyphicon
+          glyph={glyphicon}
+        />
+      </Button>
+    )
+  }
 
   render() {
-  //TODO add book glyphicon for portfolio page
     return (
       <FlexView column hAlignContent="center">
         <ButtonToolbar>
+          {this.getNavigationButton("home", "home")}
           {this.getButton("email", "envelope", "mailto:kathrynrnewbould@gmail.com")}
           {this.getButton("CV", "education", "KathrynNewbould2018.pdf", "_blank")}
-          {this.getButton("portfolio", "book")}
+          {this.getNavigationButton("portfolio", "book")}
         </ButtonToolbar>
         <TextTip tooltip={this.state.target}/>
       </FlexView>
