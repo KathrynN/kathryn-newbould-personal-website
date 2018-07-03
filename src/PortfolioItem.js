@@ -16,13 +16,10 @@ export default class TextTip extends Component {
       }}
       >
       <h1>{item_title}</h1>
-      <FlexView
-        >
-        <FlexView column>
-          <h2>{item_sub_title}</h2>
-          <p>{description}</p>
-          <Image src={braid_screenshot} rounded />
-        </FlexView>
+      <FlexView column hAlignContent="center">
+        <h2>{item_sub_title}</h2>
+        <p>{description}</p>
+        <Image src={braid_screenshot} rounded />
       </FlexView>
       </div>
     )
