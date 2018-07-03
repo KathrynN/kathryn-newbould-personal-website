@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import FlexView from "react-flexview";
 import { Image } from "react-bootstrap";
 import braid_screenshot from "./images/braid_screenshot.png";
+import './portfolio.css';
 
 export default class TextTip extends Component {
 
