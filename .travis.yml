@@ -15,4 +15,4 @@ deploy:
   acl: public_read
   on:
     repo: KathrynN/kathryn-newbould-personal-website
-    branch: travis-integration
+    branch: ["master", "travis-integration"]
